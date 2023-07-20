@@ -1,0 +1,25 @@
+--created a store database
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, condition TEXT, gender TEXT, price INTEGER);
+
+--created items for my store
+INSERT INTO store VALUES (1,'Bike','Used','Male',500);
+INSERT INTO store VALUES (2,'Doll','New','Female',10);
+INSERT INTO store VALUES (3,'Tshirt','New','Male',5);
+INSERT INTO store VALUES (4,'Lamp','Used','Female',10);
+INSERT INTO store VALUES (5,'Cup','New','Male',5);
+INSERT INTO store VALUES (6,'Knife','Used','Male',20);
+INSERT INTO store VALUES (7,'Table','Used','Female',30);
+INSERT INTO store VALUES (8,'Basetball','Used','Male',10);
+INSERT INTO store VALUES (9,'Backpack','New','Male',20);
+INSERT INTO store VALUES (10,'Handbag','New','Female',200);
+INSERT INTO store VALUES (11,'Laptop','New','Male',1300);
+INSERT INTO store VALUES (12,'Pots','Used','Female',100);
+INSERT INTO store VALUES (13,'Furniture','New','Female',3000);
+INSERT INTO store VALUES (14,'Refrigerator','New','Male',900);
+INSERT INTO store VALUES (15,'Pants','Used','Female',10);
+
+--did a query, selected only Used items in my store and did an aggregate of their sum total amount using group by
+SELECT condition, SUM(price)
+FROM Store
+WHERE condition = 'Used'
+GROUP BY condition 
